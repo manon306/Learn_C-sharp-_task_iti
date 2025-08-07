@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DAY2 learn": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
