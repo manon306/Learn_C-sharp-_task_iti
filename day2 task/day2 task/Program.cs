@@ -8,7 +8,7 @@ namespace day2_task
         {
             #region task 1
                 Console.WriteLine("*****************************************************************************");
-                Console.WriteLine("*****************************text check task*****************************");
+                Console.WriteLine("*****************************text check task*********************************");
                 Console.WriteLine("*****************************************************************************");
                 string text;
 
@@ -21,7 +21,7 @@ namespace day2_task
 
                     for (int i = 0; i < text.Length; i++)
                     {
-                        if (!char.IsLetter(text[i]) )
+                    if (!char.IsLetter(text[i]) )  
                         {
                             Console.WriteLine("Invalid text. Only letters allowed.");
                             isValid = false;
@@ -45,7 +45,7 @@ namespace day2_task
                 for(int i = 1; i <= 12; i++)
                 {
                     Console.WriteLine($"#############################Multiplication table for {i}:######################");
-                    for (int j = 1; j <= 10; j++)
+                    for (int j = 1; j <= 12; j++)
                     {
                         Console.WriteLine($"{i} * {j} = {i * j}");
                     }
