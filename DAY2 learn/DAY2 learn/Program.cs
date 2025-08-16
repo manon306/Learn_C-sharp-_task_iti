@@ -132,7 +132,6 @@
             //heap -->dynamic memory allocation
             //reference type بنخزن فيه 
             //string and array are reference type
-            //heap is not sequential memory allocation
             //heap is dynamic memory allocation
             //المسئول عن تنظيف هو garbage collector
             #endregion
@@ -176,9 +175,6 @@
             //string is immutable
             //string is a collection of characters
             //string is a sequence of characters
-            //string is a class
-            //string is a reference type
-            //string is a collection of characters
             string str = "Hello World";
             Console.WriteLine(str);
             Console.WriteLine(str.Length);//index + 1
@@ -302,9 +298,224 @@
             #endregion
             //Menu add edit delete getall getbyid -->employee class
             //stack heap
+            //--------------DAY 4 LEARN----------------
+            #region OOP
+            /*
+             * --object oreinted programming
+             * طريق تنظيمية بستخدمها عشان انظم الكود بتاعي
+             * مش لغه برمجة
+             * 1-reusable code
+             * 2-maintainable code -->easy to update / add
+             * 3-testable
+             * --> when use
+             *      1- large project
+             * -->OOP princible
+             *          1- inheritance**
+             *          2-encapsulation**
+             *          3-polymarphism
+             *          4-abstraction
+             *          
+             */
+            #endregion
+            #region access modofier
+            /*
+             * MUST KNOW --> access modifier ,property
+             * 
+             * 1-access modofier
+             *      1-public    --> public member of an instance are accessible in the program 
+                     *              -->بيظهر في اي مكان داخل ال solution  بتاعي
+                     *              --> لو في اكتر من بروجيكت
+             *      2-private   --> access feild only inside {} ,مينفعش يكون في الكلاس
+                     *              -->on data member and function member
+                     *              -->default for datafeild/function
+             *      3-protected  --> اشوفه اثناء الوراثه 
+             *                  --> his childs onlyyyyyy, or in this scope
+             *      4-internal  --> default for class
+                    *                -->علي مستوي ال namespace
+                    *                --> in one project
+             *      5-file      --> يكون متشاف علي مستوي الفايل بس
+             *                      file class D{}
+             *      
+             */
+            #endregion
+            #region encapsulation
+            /*
+             * bindling data => validation for data -conditions
+             * -->setter ,getter
+             * 
+             */
 
+            #endregion
+            #region property -->method without parameter use to excute code have getter / setter
+            //get value /codition /set value
+                            public int _age
+                {
+                    get
+                    {
+                        return _age;
+                    };
+                    set
+                    {
+                        _age = value;
+                    };
+                }
+        #endregion
+            #region autoproperty
+            //1- بشيل ال prop , feild
+            //excute code 
+            //store value
+            // مينفعش اعمل validation
+            //بدي صلاحيات قراءة فقط او كتابه فقط او الاتنين 
+                public int Age { get; set; }//read and write
+                public int Age { get }       //read only
+                                             //public int Age { get } = 9 //reassign /constractot
+                                             //public int Age { get ,private set; } = 9 //or constractor // any methon in class
+                                             //public int Age { get ,init set; } = 9    ************************search
+                public int Age { set }       //write only
+                                             //private set
+        #endregion
+        #region inheritance
+        /*
+         * is a
+         * child is a base
+         * class dev : employee{}
+         * بستخدمها لو فيه حاجات مشتركه وعايزة اجمعها في مكان واحد بس  اقدر اعدل منه علي كله 
+         *  Multi inheritance  not allowed
+         *  sealed --> بتمنع الوراثه --. عدي اعمل instance
+         *  or make private constructor --> بتمنع الوراثه
+         *  لو عايزة يكون واحد private ف اعمل واحد تاني يكون public 
+         *  public con :base(parameter){} بقوله ان كدة في الي يورث يعمل كونستراكتور عشان نبعت ال parameter 
+         *  
+         *  base --> access fron parent
+         *  this --> access from my class
+         */
+        #endregion
+        //--------------DAY 5 LEARN----------------
+        #region polymarphisim 
+
+        /*عادي حتي لو مفيش  inhirit
+         * 
+         * overLoading 
+         * بعيد هيكله الميثود
+         * لو عندي اكتر من ميثد في نفس الكلاس لازم احفظ علي شوية شروط 
+         * 1- name method const
+         * 2- diff signature -->parameter count/ type
+         * 3- diff / const return type
+         * 
+         *        class employee{ public void print(){}
+         *                        public void print(string name){}
+         *        }
+         * 
+         * compiler / static/early bindig -->طريقه بيستخدمها عشان يعرف  اني ميثود نستخدمها اثناء
+         *                                  compile time
+         *                                  لو عندي ميثود وملهاش override
+         *                                  1- بيشوف ال reference لو لقي الكلاس خلاص ملقاهوش بيطلع ايرور
+         *                                  2- Check binding  -->have same data type or no if no -->error else -->complete
+         * ===================================================================================================================   
+         *    
+         * Override
+         *    لو معنديش inhirit ----> مش هيبقي فيه override
+         *    Method Parent class Must have word Virtual
+         *    Method that i want to override it must have word override
+         *    signutre ,return type ,name , accessModifier ==> ثابتين
+         *  why use it ?
+         *  لو عندي ميثود في الاب وبيسري علي كله بس في حاجة لا ف بنكتب الميثود دا الchild دا تاني 
+         *  
+         *  dynamic -late -runtime binding ==> بيحددوا اني ميثود اعملها call
+         *    in compile ,
+         *      1- check method name in child
+         *      2-check method name in parent 
+         *      
+         *     in run time
+         *      1-check if have override or virtual ==> print 
+         *              else go to parent
+         *    ================================================================================================================
+         *    return type const 
+         *    ماعدا حاله واحدة بس
+         *    الا لو فوق برجع reference type => parent
+         *    وتحت رجعت child from same reference
+         *    ==================================================================================================================
+         */
+        #endregion
+        #region  abstraction (interface ,abstract class)
+        /*
+         * abstract class 
+         *      IS _ A
+         *      فيه كل حاجة +
+         *      عادي اكتب abstract method ومكتبش ليها implimintation
+         *       ومينفعش اعمل منه instance
+         * how can the class to this and what
+         * 
+         * abstract method must be in abstract class
+         * 
+         * why use abstraction?
+         *  
+         */
+        #endregion
+        public abstract class Employee {
+            public abstract void Print();
         }
+        class HR : Employee
+        {
+            public override void Print() //must be override
+            {
+                Console.WriteLine(" xxx");
+            }
+        }
+        #region Interface
+        /* Interface
+         *      HAS -A
+         *      مينفعش اعمل instance
+         *      can have body in method
+         *      access modifier ==> public
+         *      not have constractor
+         *      not have feild
+         */
+        public interface IEmployee
+        {
+            void Print();
+        }
+        public class E : IEmployee
+        {
+            public void Print()
+            {
+                Console.WriteLine("");
+            }
+        }
+        public interface IFirst
+        {
+            void Print();
+        }
+
+        public interface ISecond
+        {
+            void Print();
+        }
+
+        public class MyClass : IFirst, ISecond
+        {
+            void IFirst.Print()   // تنفيذ خاص بالواجهة الأولى
+            {
+                Console.WriteLine("Print من IFirst");
+            }
+
+            void ISecond.Print()  // تنفيذ خاص بالواجهة الثانية
+            {
+                Console.WriteLine("Print من ISecond");
+            }
+        }
+
+        #endregion
+        #region   Solid
+        /*
+         * 
+         */
+        #endregion
+        #region
+        #endregion
+
     }
+}
 }
 namespace classLearn
     {
@@ -362,7 +573,7 @@ namespace classLearn
             }
             public int GetID()
             {
-                return ID;
+                return id;
             }
             public void SetAllData(string name, int age, int id)
             {
@@ -377,8 +588,29 @@ namespace classLearn
         {
             static void Main(string[] args)
             {
-                
+              private id int;
+              public names string;
+
             }
         }
-    }
+        class employee
+        {
+            int id;
+            string name;
+            int age;
+            public void SetAge(int Age)
+            {
+                if (Age > 25)
+                {
+                    age = Age;
+                }
+                else
+                {
+                    Console.WriteLine($"Name: {Name}, Age: {Age}");
+
+                }
+            }
+
+        }
+}
 

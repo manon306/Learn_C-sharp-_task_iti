@@ -1,6 +1,11 @@
 ﻿namespace Day3_task
 {
-    internal class employee
+    public abstract class AddBounus
+    {
+        public abstract void ShowBonus();
+        
+    }
+     public class employee   : AddBounus
     {
         //data fields
             private int id;
@@ -9,6 +14,7 @@
             private int salary;
             
         //constructors
+            public employee() { }
             public employee(int Id, string Name, int Age, int Salary)
         {
             id= Id;
@@ -16,8 +22,12 @@
             age= Age;
             salary= Salary;
         }
-
+        
         //methods
+             public  override void ShowBonus()
+                {
+                    
+                }
             public void Print()
             {
                 Console.WriteLine(@$"
