@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Day 8 task": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
