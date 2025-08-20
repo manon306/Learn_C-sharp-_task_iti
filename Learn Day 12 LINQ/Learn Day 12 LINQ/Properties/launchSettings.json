@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Learn Day 12 LINQ": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
