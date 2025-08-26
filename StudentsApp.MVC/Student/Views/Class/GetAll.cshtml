@@ -1,0 +1,64 @@
+﻿@model (List<Students.BLL.ModelVM.Class.GetAllClass>, string?, bool)
+
+@{
+    ViewBag.Title = "All Classes";
+    var classes = Model.Item1;
+    var isError = Model.Item3;
+    var message = Model.Item2;
+}
+
+<h1 class="mb-4 text-center">All Classes</h1>
+
+@if (isError || classes == null || classes.Count == 0)
+{
+    <div class="alert alert-danger text-center">
+        @message ?? "No classes found."
+    </div>
+}
+else
+{
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        @foreach (var cls in classes)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-success text-white">
+                        <h4 class="mb-0">@cls.name</h4>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Teachers:</h5>
+                        @if (cls.teachers != null && cls.teachers.Count > 0)
+                        {
+                            <ul class="list-group list-group-flush mb-3">
+                                @foreach (var t in cls.teachers)
+                                {
+                                    <li class="list-group-item">@t.Name</li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <p class="text-muted">No teachers assigned.</p>
+                        }
+
+                        <h5 class="card-title text-warning">Students:</h5>
+                        @if (cls.users != null && cls.users.Count > 0)
+                        {
+                            <ul class="list-group list-group-flush">
+                                @foreach (var u in cls.users)
+                                {
+                                    <li class="list-group-item">@u.Name</li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <p class="text-muted">No students in this class.</p>
+                        }
+                    </div>
+                    
+                </div>
+            </div>
+        }
+    </div>
+}

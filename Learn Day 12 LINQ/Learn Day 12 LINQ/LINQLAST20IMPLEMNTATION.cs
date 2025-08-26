@@ -10,6 +10,7 @@ namespace Learn_Day_12_LINQ
 
     public static class IMPLEMENTATION
     {
+        #region Where --> كل الي فيه بس بيطبق الشرط
         public static List<dynamic> Where_Function(this List<dynamic> lst, Func<dynamic, bool> x)
         {
             List<dynamic> y = new List<dynamic>();
@@ -22,6 +23,8 @@ namespace Learn_Day_12_LINQ
             }
             return y;
         }
+        #endregion
+        #region --> Like if index < 5 && value > 3
         public static List<dynamic> WhereINDEX_Function(this List<dynamic> lst, Func<dynamic, bool> x, Func<int, bool> z)
         {
             List<dynamic> y = new List<dynamic>();
@@ -34,6 +37,8 @@ namespace Learn_Day_12_LINQ
             }
             return y;
         }
+        #endregion
+        #region
         public static List<dynamic> SELECTION(this List<dynamic> lst, Func<dynamic, dynamic> z)
         {
             List<dynamic> y = new List<dynamic>();
@@ -43,6 +48,7 @@ namespace Learn_Day_12_LINQ
             }
             return y;
         }
+        #endregion
         public static List<dynamic> SELECTION_INDEX(this List<dynamic> lst, Func<int, bool> z)
         {
             List<dynamic> y = new List<dynamic>();
@@ -239,15 +245,31 @@ namespace Learn_Day_12_LINQ
             }
             return lst[lst.Count - 1];
         }
-        public static dynamic SINGLE_LIST(this List<dynamic> lst)
+        public static dynamic SINGLE_LIST(this List<dynamic> lst,Func<dynamic,bool>x)
         {
             if (lst == null || lst.Count == 0)
                 throw new Exception("List is empty");
 
-            if (lst.Count > 1)
+            if (lst.Count > 1 && x==null)
                 throw new Exception("List must contain exactly one element");
+            List<dynamic> lst2 = new();
 
-            return lst[0];
+            foreach(dynamic item in lst)
+            {
+                bool flag=false;
+                if(x.Invoke(item))
+                {
+                    lst2.Add(item);
+                    flag = true;
+                }
+                if(lst.Count>1)
+                {
+                    throw new Exception(" must be one element");
+                }
+            }
+            return (lst2[0]);
+
+            
         }
         public static dynamic SINGLEOrDefault_LIST(this List<dynamic> lst)
         {

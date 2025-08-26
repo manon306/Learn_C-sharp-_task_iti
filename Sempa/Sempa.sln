@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36327.8 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sempa.PL", "Sempa.PL\Sempa.PL.csproj", "{FD6721B3-3B62-4F01-AFCC-6C5DA8A0CDF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sempa.BLL", "Sempa.BLL\Sempa.BLL.csproj", "{7A3F952C-0B22-4C8C-9253-9534138B71E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sempa.DAL", "Sempa.DAL\Sempa.DAL.csproj", "{C4A977A4-396C-428B-A05F-331CB8D48921}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD6721B3-3B62-4F01-AFCC-6C5DA8A0CDF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD6721B3-3B62-4F01-AFCC-6C5DA8A0CDF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD6721B3-3B62-4F01-AFCC-6C5DA8A0CDF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD6721B3-3B62-4F01-AFCC-6C5DA8A0CDF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A3F952C-0B22-4C8C-9253-9534138B71E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A3F952C-0B22-4C8C-9253-9534138B71E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A3F952C-0B22-4C8C-9253-9534138B71E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A3F952C-0B22-4C8C-9253-9534138B71E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4A977A4-396C-428B-A05F-331CB8D48921}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4A977A4-396C-428B-A05F-331CB8D48921}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4A977A4-396C-428B-A05F-331CB8D48921}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4A977A4-396C-428B-A05F-331CB8D48921}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {177E453D-287C-401E-B7EA-439F28BB230D}
+	EndGlobalSection
+EndGlobal

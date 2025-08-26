@@ -1,0 +1,49 @@
+﻿@model Student
+
+<div class="card w-75">
+    <div class="card-body align-items-center">
+        @if (ViewBag.ErrorMessage != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                @ViewBag.ErrorMessage
+            </div>
+        }
+        <form class="w-75" asp-action="saveCreate" asp-controller="Student" method="post">
+            <div class="card-header bg-success text-white text-center fw-bold mb-2 p-2">
+                Create new Student
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="name" class="form-label"></label>
+                <input type="text" asp-for="name" class="form-control w-50" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="age" class="form-label"></label>
+                <input type="text" asp-for="age" class="form-control w-50" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="address" class="form-label"></label>
+                <input type="text" asp-for="address" class="form-control w-50" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="email" class="form-label"></label>
+                <input type="text" asp-for="email" class="form-control w-50" />
+            </div>
+
+            <div class="mb-3">
+                <label>Class</label>
+                <select name="ClassID" class="form-control w-50">
+                    @foreach (var cls in ViewBag.Classes)
+                    {
+                        <option value="@cls.ID">@cls.Name</option>
+                    }
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

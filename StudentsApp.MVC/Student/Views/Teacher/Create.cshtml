@@ -1,0 +1,30 @@
+﻿@using Students.BLL.ModelVM.Teacher
+@using Student.DAL.Entity
+@model Teacher
+
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-lg rounded-4 w-50">
+        <div class="card-header bg-success text-white text-center fw-bold p-3">
+            Create New Teacher
+        </div>
+
+        <div class="card-body">
+            <form asp-action="saveTeacher" asp-controller="Teacher" method="post" class="px-4">
+
+                <div class="mb-3 text-start">
+                    <label asp-for="Name" class="form-label fw-bold"></label>
+                    <input type="text" asp-for="Name" class="form-control" />
+                </div>
+
+                <div class="mb-3 text-start">
+                    <label asp-for="age" class="form-label fw-bold"></label>
+                    <input type="number" asp-for="age" class="form-control" />
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success px-5">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

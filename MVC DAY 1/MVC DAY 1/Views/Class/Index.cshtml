@@ -1,0 +1,39 @@
+﻿@model List<MVC_DAY_1.Models.Class>
+
+<h2>Classes and Students</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Class</th>
+            <th>Students</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cls in Model)
+        {
+            <tr>
+                <td>@cls.Name</td>
+                <td>
+                    <table class="table table-sm table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var student in cls.Students)
+                            {
+                                <tr>
+                                    <td>@student.ID</td>
+                                    <td>@student.name</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

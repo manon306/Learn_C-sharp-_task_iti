@@ -1,0 +1,38 @@
+﻿@using Students.BLL.ModelVM.Teacher
+@model (List<GetAllTeacher>, string?, bool)
+
+<div class="container mt-5">
+    @if (Model.Item3 == true)
+    {
+        <div class="alert alert-danger text-center fw-bold">
+            @Model.Item2
+        </div>
+    }
+    else
+    {
+        <div class="card shadow-lg rounded-4">
+            <div class="card-header bg-success text-white text-center fw-bold">
+                Teachers List
+            </div>
+            <div class="card-body">
+                <table class="table table-hover table-bordered text-center align-middle">
+                    <thead class="table-success">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Age</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Item1)
+                        {
+                            <tr>
+                                <td>@item.Name</td>
+                                <td>@item.age</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+</div>

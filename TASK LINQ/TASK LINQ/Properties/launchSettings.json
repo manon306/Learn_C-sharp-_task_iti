@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "TASK LINQ": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+﻿@model Student
+
+<div class="card w-75 ">
+    <div class="card-body align-items-center">
+        @if (ViewBag.ErrorMessage != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                @ViewBag.ErrorMessage
+            </div>
+        }
+        else
+        {
+            <form class="w-75 " asp-action="updateStudent" asp-controller="Student" method="post">
+                <div class="card-header bg-success text-white text-center fw-bold mb-2 p-2">
+                    Display Student
+                </div>
+                <input type="hidden" asp-for="ID" />
+                <div class="mb-3">
+                    <label asp-for="name" class="form-label"></label>     
+                    <input readonly type="text" asp-for="name" class="form-control w-50" />
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="age" class="form-label"></label>
+                    <input readonly type="text" asp-for="age" class="form-control w-50" />
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="address" class="form-label"></label>
+                    <input readonly type="text" asp-for="address" class="form-control w-50" />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="email" class="form-label"></label>
+                    <input readonly type="text" asp-for="email" class="form-control w-50" />
+                </div>
+                <button type="button" class="btn btn-dark ">
+                    <a asp-action="Index" asp-controller="Student" class="text-white text-decoration-none">Go Back</a>
+                </button>
+    
+                <a asp-action="Delete" asp-controller="Student" asp-route-Id="@Model.ID" 
+                   class="btn btn-danger text-white text-decoration-none ms-2"
+                   >
+                    Delete
+                </a>
+            </form>
+        }
+
+    </div>
+</div>
+
