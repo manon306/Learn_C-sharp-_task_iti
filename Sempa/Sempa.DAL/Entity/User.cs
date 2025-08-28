@@ -1,6 +1,9 @@
-﻿public class User
+﻿using Sempa.DAL.Enum;
+using System.ComponentModel.DataAnnotations.Schema;
+
+public class User
 {
-    public User(string firstName, string lastName, string email, string password, string imagePath)
+    public User(string firstName, string lastName, string email, string password, string imagePath , Sempa.DAL.Enum.UserType UserType)
     {
         FirstName = firstName;
         LastName = lastName;
@@ -8,6 +11,7 @@
         Password = password;
         CreatedAt = DateTime.Now;
         this.imagePath = imagePath;
+        this.UserType = UserType;
     }
 
     public int Id { get; private set; }
@@ -21,6 +25,10 @@
     public bool IsDeleted { get; private set; }
     public bool IsUpdated { get; private set; }
     public string imagePath { get; private set; }
+    public int ClassId { get;  set; }
+    [ForeignKey("ClassId")]
+    public virtual Sempa.DAL.Entity.CLass c {  get;  set; }
+    public Sempa.DAL.Enum.UserType UserType { get; private set; }
     public bool Update(string MfirstName, string MlastName, string email, string password)
     {
         if(string.IsNullOrEmpty(MfirstName)|| string.IsNullOrEmpty(MlastName))

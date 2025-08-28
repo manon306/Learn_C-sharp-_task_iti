@@ -7,5 +7,6 @@
         bool Delete(int id);
         User GetById(int id);
         List<User> GetAll(Expression<Func<User, bool>> filter = null);
+        
     }
 }

@@ -1,11 +1,11 @@
-﻿using AutoMapper;
-namespace Sempa.BLL.Mapper
+﻿namespace Sempa.BLL.Mapper
 {
     public class DomainProfile :Profile
     {
         public DomainProfile()
         {
             CreateMap<User,GetAllVm>().ReverseMap();
+            CreateMap<CLass,GetVm>().ReverseMap();
         }
     }
 }

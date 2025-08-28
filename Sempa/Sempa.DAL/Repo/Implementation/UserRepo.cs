@@ -1,4 +1,5 @@
-﻿namespace Sempa.DAL.Repo.Implementation
+﻿
+namespace Sempa.DAL.Repo.Implementation
 {
     public class UserRepo : IUserRepo
     {
@@ -105,5 +106,6 @@
                 return false;
             }
         }
+
     }
 }

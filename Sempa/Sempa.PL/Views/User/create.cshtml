@@ -8,7 +8,7 @@
 <div class="d-flex justify-content-center align-items-center min-vh-100">
     <div class="card shadow-lg rounded-4 w-50">
         <div class="card-header bg-primary text-white text-center fw-bold p-3">
-            Create New User
+            Add new Student
         </div>
 
         <div class="card-body">
@@ -41,8 +41,20 @@
                     <input asp-for="Password" type="password" class="form-control" />
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
+                <!-- User Type -->
+                <div class="mb-3 text-start">
+                    <label asp-for="UserType" class="form-label fw-bold"></label>
+                    <select asp-for="UserType" class="form-select">
+                        <option value="">-- Select User Type --</option>
+                        <option value="Student">Student</option>
+                        <option value="Teacher">Teacher</option>
+                    </select>
+                    <span asp-validation-for="UserType" class="text-danger"></span>
+                </div>
+
                 <div class="mb-3 text-start">
                     <label asp-for="Profile" class="form-label fw-bold"></label>
+                    <input asp-for="Profile" type="file" class="form-control" />
                     <span asp-validation-for="Profile" class="text-danger"></span>
                 </div>
 

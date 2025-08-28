@@ -7,5 +7,8 @@
         public string Email { get;  set; }
         public DateTime CreatedAt { get;  set; }
         public string imagePath { get; set; }
+        public Sempa.DAL.Enum.UserType UserType { get;  set; }
+
+
     }
 }

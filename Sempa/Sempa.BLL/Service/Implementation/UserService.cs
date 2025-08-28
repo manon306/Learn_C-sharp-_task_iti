@@ -19,7 +19,21 @@ namespace Sempa.BLL.Service.Implementation
             var imagePath= Upload.UploadFile("Files", user.Profile);
 
 
-            var newUser = new User(user.FirstName,user.LastName,user.Email , user.Password,imagePath);
+            var newUser = new User(user.FirstName,user.LastName,user.Email , user.Password,imagePath ,user.UserType);
+            var result = userRepo.Create(newUser);
+            if (result)
+            {
+                return (true, null);
+            }
+            return (false, "Failed to create user. :=(");
+        }
+        public (bool, string?) Create_T(CreateTeacherVm user)
+        {
+            //Get image Path
+            var imagePath = Upload.UploadFile("Files", user.Profile);
+
+
+            var newUser = new User(user.FirstName, user.LastName, user.Email, user.Password, imagePath,user.UserType);
             var result = userRepo.Create(newUser);
             if (result)
             {
@@ -29,7 +43,7 @@ namespace Sempa.BLL.Service.Implementation
         }
         public (bool, List<GetAllVm>?, string?) GetAll()
         {
-            var result = userRepo.GetAll();
+            var result = userRepo.GetAll().Where(a => a.UserType == DAL.Enum.UserType.Student);
 
             if (result != null && result.Any())
             {
@@ -41,7 +55,20 @@ namespace Sempa.BLL.Service.Implementation
 
             return (false, null, "Failed to Get All Users :( ");
         }
+        public (bool, List<GetAllVm>?, string?) GetAll_T()
+        {
+            var result = userRepo.GetAll().Where(a=>a.UserType == DAL.Enum.UserType.Teacher);
 
+            if (result != null && result.Any())
+            {
+
+                var users = _mapper.Map<List<GetAllVm>>(result);
+
+                return (true, users, null);
+            }
+
+            return (false, null, "Failed to Get All Users :( ");
+        }
 
     }
 }

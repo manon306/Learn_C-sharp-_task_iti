@@ -18,5 +18,6 @@ namespace Sempa.BLL.VM.UserVm
         [MinLength(6, ErrorMessage = "Password must be at least 6 characters long.")]
         public string Password { get;  set; }
         public IFormFile Profile { get; set; }
+        public Sempa.DAL.Enum.UserType UserType {  get; set; } = DAL.Enum.UserType.Student;
     }
 }
