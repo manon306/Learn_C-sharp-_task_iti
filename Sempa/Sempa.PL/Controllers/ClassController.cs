@@ -16,7 +16,7 @@
             if (!success)
             {
                 ViewBag.Error = error;
-                return View(new ClassDashboardVM());
+                throw new Exception(error);
             }
 
             var vm = new ClassDashboardVM

@@ -4,5 +4,6 @@
     {
         (bool, string?) Create(CreateVm user);
         (bool, List<GetVm>?, List<User>?, List<User>?, string?) GetAll();
+        (bool, List<GetClassVm>?, string?) GetAllClasses();
     }
 }

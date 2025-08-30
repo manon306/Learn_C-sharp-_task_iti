@@ -6,6 +6,7 @@
         {
             CreateMap<User,GetAllVm>().ReverseMap();
             CreateMap<CLass,GetVm>().ReverseMap();
+            CreateMap<CLass, GetClassVm>().ReverseMap();
         }
     }
 }

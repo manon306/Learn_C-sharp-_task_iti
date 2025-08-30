@@ -1,6 +1,6 @@
 ﻿namespace Sempa.DAL.DataBase
 {
-    public class SempaDbContext: DbContext
+    public class SempaDbContext: IdentityDbContext<LogInUser>
     {
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{

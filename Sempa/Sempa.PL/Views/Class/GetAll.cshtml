@@ -12,19 +12,19 @@
     <div class="row mb-4">
         <div class="col-md-4">
             <div class="card p-3 text-center">
-                <div class="h6">Classes</div>
+                <div class="h6">@SharedLocalizer["Classes"] </div>
                 <div class="fs-3 fw-bold">@((Model?.Classes?.Count() ?? 0))</div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card p-3 text-center">
-                <div class="h6">Students</div>
+                <div class="h6">@SharedLocalizer["Students"]</div>
                 <div class="fs-3 fw-bold">@((Model?.Students?.Count() ?? 0))</div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card p-3 text-center">
-                <div class="h6">Teachers</div>
+                <div class="h6">@SharedLocalizer["Teachers"]</div>
                 <div class="fs-3 fw-bold">@((Model?.Teachers?.Count() ?? 0))</div>
             </div>
         </div>
@@ -47,7 +47,7 @@
                                     <p class="card-text mb-1">
                                         <small>Students Count: @((cls.Students?.Count() ?? 0))</small>
                                     </p>
-                                    <!-- If you have Id in GetVm you can add details link here -->
+                                    
                                 </div>
                             </div>
                         </div>
@@ -56,7 +56,7 @@
             }
             else
             {
-                <div class="alert alert-info">No classes found.</div>
+                <div class="alert alert-info">@SharedLocalizer["Noclassesfound"].</div>
             }
         </div>
 
@@ -68,9 +68,9 @@
                     <thead class="table-light">
                         <tr>
                             <th style="width:40px">#</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Class</th>
+                            <th>@SharedLocalizer["Name"]</th>
+                            <th>@SharedLocalizer["Email"]</th>
+                            <th>@SharedLocalizer["Class"]</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -90,7 +90,7 @@
                         }
                         else
                         {
-                            <tr><td colspan="4" class="text-center">No students found.</td></tr>
+                            <tr><td colspan="4" class="text-center">@SharedLocalizer["Nostudentsfound"].</td></tr>
                         }
                     </tbody>
                 </table>
@@ -102,9 +102,9 @@
                     <thead class="table-light">
                         <tr>
                             <th style="width:40px">#</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Class</th>
+                            <th>@SharedLocalizer["Name"]</th>
+                            <th>@SharedLocalizer["Email"]</th>
+                            <th>@SharedLocalizer["Class"]</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -124,7 +124,7 @@
                         }
                         else
                         {
-                            <tr><td colspan="4" class="text-center">No teachers found.</td></tr>
+                            <tr><td colspan="4" class="text-center">@SharedLocalizer["Noteachersfound"].</td></tr>
                         }
                     </tbody>
                 </table>

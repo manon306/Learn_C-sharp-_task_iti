@@ -1,9 +1,11 @@
-﻿using Sempa.DAL.Enum;
+﻿using Sempa.DAL.Entity;
+using Sempa.DAL.Enum;
 using System.ComponentModel.DataAnnotations.Schema;
 
 public class User
 {
-    public User(string firstName, string lastName, string email, string password, string imagePath , Sempa.DAL.Enum.UserType UserType)
+    public User() { }
+    public User(string firstName, string lastName, string email, string password, string imagePath , Sempa.DAL.Enum.UserType UserType, int ClassId)
     {
         FirstName = firstName;
         LastName = lastName;
@@ -12,6 +14,7 @@ public class User
         CreatedAt = DateTime.Now;
         this.imagePath = imagePath;
         this.UserType = UserType;
+        this.ClassId =ClassId;
     }
 
     public int Id { get; private set; }

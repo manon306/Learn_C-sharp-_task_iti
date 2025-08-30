@@ -7,5 +7,6 @@
         bool Delete(int id);
         CLass GetById(int id);
         List<CLass> GetAll();
+
     }
 }

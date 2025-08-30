@@ -139,7 +139,7 @@
     <value>Email</value>
   </data>
   <data name="FirstName" xml:space="preserve">
-    <value>FirstName</value>
+    <value>First Name</value>
   </data>
   <data name="GetAllTeachers" xml:space="preserve">
     <value>Get All Teachers</value>
@@ -148,10 +148,16 @@
     <value>Get All Users</value>
   </data>
   <data name="LastName" xml:space="preserve">
-    <value>LastName</value>
+    <value>Last Name</value>
   </data>
   <data name="Name" xml:space="preserve">
-    <value> Name</value>
+    <value>Name</value>
+  </data>
+  <data name="Noclassesfound" xml:space="preserve">
+    <value>No classes found</value>
+  </data>
+  <data name="Noteachersfound" xml:space="preserve">
+    <value>No teachers found</value>
   </data>
   <data name="Students" xml:space="preserve">
     <value>Students</value>
@@ -161,5 +167,23 @@
   </data>
   <data name="Users" xml:space="preserve">
     <value>Users</value>
+  </data>
+  <data name="Nostudentsfound" xml:space="preserve">
+    <value>No students found</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="UserType" xml:space="preserve">
+    <value>UserType</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="AddnewStudent" xml:space="preserve">
+    <value>Add new Student</value>
   </data>
 </root>

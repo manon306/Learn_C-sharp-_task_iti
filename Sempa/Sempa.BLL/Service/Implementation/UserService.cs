@@ -19,7 +19,7 @@ namespace Sempa.BLL.Service.Implementation
             var imagePath= Upload.UploadFile("Files", user.Profile);
 
 
-            var newUser = new User(user.FirstName,user.LastName,user.Email , user.Password,imagePath ,user.UserType);
+            var newUser = new User(user.FirstName,user.LastName,user.Email , user.Password,imagePath ,user.UserType,user.ClassId);
             var result = userRepo.Create(newUser);
             if (result)
             {
@@ -33,13 +33,13 @@ namespace Sempa.BLL.Service.Implementation
             var imagePath = Upload.UploadFile("Files", user.Profile);
 
 
-            var newUser = new User(user.FirstName, user.LastName, user.Email, user.Password, imagePath,user.UserType);
+            var newUser = new User(user.FirstName, user.LastName, user.Email, user.Password, imagePath,user.UserType,user.ClassId);
             var result = userRepo.Create(newUser);
             if (result)
             {
                 return (true, null);
             }
-            return (false, "Failed to create user. :=(");
+            return (false, "Failed to create Teacher. :=(");
         }
         public (bool, List<GetAllVm>?, string?) GetAll()
         {

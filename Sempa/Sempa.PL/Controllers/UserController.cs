@@ -1,27 +1,40 @@
-﻿using Sempa.BLL.VM.UserVm;
+﻿using Microsoft.AspNetCore.Authorization;
+using Sempa.BLL.VM.ClassVm;
+using Sempa.BLL.VM.UserVm;
 
 namespace Sempa.PL.Controllers
 {
+    [Authorize]
     public class UserController : Controller
     {
         private readonly IUserService userService;
-        
-        public UserController(IUserService userService)
+        private readonly IClassService classService;
+
+        public UserController(IUserService userService, IClassService classService)
         {
             this.userService = userService;
+            this.classService = classService;
         }
 
         [HttpGet]
-        public IActionResult create()
+        public IActionResult Create()
         {
-
+            var classes = classService.GetAllClasses();
+            if (classes.Item1)
+            {
+                ViewBag.Classes = classes.Item2;
+            }
+            else
+            {
+                throw new Exception(classes.Item3);
+            }
 
             return View();
         }
-        [HttpPost]
-        public IActionResult create(CreateUserVm user)
-        {
 
+        [HttpPost]
+        public IActionResult Create(CreateUserVm user)
+        {
             if (ModelState.IsValid)
             {
                 var result = userService.Create(user);
@@ -31,12 +44,20 @@ namespace Sempa.PL.Controllers
                     return RedirectToAction("GetAlls", "User");
                 }
                 ViewBag.Message = result.Item2;
-
             }
             return View(user);
         }
         public IActionResult create_T()
         {
+            var classes = classService.GetAllClasses();
+            if (classes.Item1)
+            {
+                ViewBag.Classes = classes.Item2;
+            }
+            else
+            {
+                throw new Exception(classes.Item3);
+            }
             return View();
         }
         [HttpPost]
@@ -49,7 +70,7 @@ namespace Sempa.PL.Controllers
 
                 if (result.Item1 == true)
                 {
-                    return RedirectToAction("GetAlls", "User");
+                    return RedirectToAction("GetAll_T", "User");
                 }
                 ViewBag.Message = result.Item2;
 

@@ -1,13 +1,4 @@
 ﻿using L2O___D09;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data.SqlTypes;
-using System.Diagnostics;
-using System.Runtime.Intrinsics.X86;
-using static System.Net.Mime.MediaTypeNames;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
 namespace TASK_LINQ
 {
     internal class Program
@@ -218,7 +209,8 @@ namespace TASK_LINQ
             var lastThreeInProductName = all_products
                 .Where(p => p.ProductName.Length >= 3)
                 .Select(p => p.ProductName.Substring(p.ProductName.Length - 3));
-
+            //Farida ---> 6-3 =3  
+            //Menna --> 5 - 3 =2
             var lastThreeInCompanyName = all_customers
                 .Where(c => c.CompanyName.Length >= 3)
                 .Select(c => c.CompanyName.Substring(c.CompanyName.Length - 3));
@@ -301,7 +293,7 @@ namespace TASK_LINQ
                 Console.WriteLine($"{category.category}: {category.cheap} unit price");
             }
             #endregion
-            #region . Get the products with the cheapest price in each category (Use Let)
+            #region Get the products with the cheapest price in each category (Use Let)
             var CheapestByCategory2 = from p in all_products
                                       group p by p.Category into g
                                       let minPrice = g.Min(p => p.UnitPrice)
