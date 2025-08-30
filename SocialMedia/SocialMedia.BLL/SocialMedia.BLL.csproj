@@ -14,8 +14,14 @@
     <Folder Include="Service\Abstraction\" />
     <Folder Include="Service\Implementation\" />
   </ItemGroup>
+    <!--All Packages we need-->
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="15.0.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+	</ItemGroup>
 
-  <ItemGroup>
+
+	<ItemGroup>
     <ProjectReference Include="..\SocialMedia.DAL\SocialMedia.DAL.csproj" />
   </ItemGroup>
 
